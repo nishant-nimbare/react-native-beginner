@@ -13,7 +13,6 @@
  import imgComp from './components/imgComp/imgComp'
  import dict from './components/dict/dict'
  import Home from './components/Home/Home'
- import List from './components/ListView'
  import Calculator from './components/Calculator'
  import Pomodoro from './components/Pomodoro'
 
@@ -23,7 +22,6 @@
      Home: Home,
      Test: Test,
      dict: dict,
-     List: List,
    },
    {
      initialRouteName: "Home"

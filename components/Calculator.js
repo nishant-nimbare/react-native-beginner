@@ -9,13 +9,15 @@ import {
   StatusBar,
 } from 'react-native';
 
+import {Icon} from 'react-native-elements';
+
 export default class Calculator extends Component {
 
   constructor(props){
     super(props);
 
     this.state={
-      result : 'initial result',
+      result : '',
     }
   }
 
@@ -88,6 +90,9 @@ export default class Calculator extends Component {
         barStyle="light-content"
         backgroundColor='#21e6c1'
         />
+          <View style={styles.icon}>
+            <Icon name='navicon' type='font-awesome' onPress={()=>this.props.navigation.toggleDrawer()}/>
+          </View>
         <View style={{flex:1}}>
           <Text style={styles.screen}>{this.state.result}</Text>
         </View>
@@ -133,5 +138,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     fontSize: 25,
     margin: 5,
-  }
+  },
+  icon:{
+    justifyContent:'flex-start',
+    position:'absolute',
+    top:0,
+    left:0,
+  },
 });

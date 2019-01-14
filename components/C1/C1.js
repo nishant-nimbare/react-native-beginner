@@ -11,6 +11,8 @@ import {
   Button
 } from 'react-native';
 
+import {Icon} from 'react-native-elements';
+
 export default class Test extends Component{
  static navigationOptions = {
    drawerLabel: 'Quotes'
@@ -50,6 +52,9 @@ _pressed() {
  render(){
    return(
      <View style={{flex:1}} >
+               <View style={styles.icon}>
+                 <Icon name='navicon' type='font-awesome' onPress={()=>this.props.navigation.toggleDrawer()}/>
+               </View>
      <View style={{flex:1 , alignItems:'center',justifyContent:'center'}}>
       <Text style={{fontSize:30, color: 'green'}}>Get a random quote</Text>
      </View>
@@ -75,5 +80,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+  },
+  icon:{
+    justifyContent:'flex-start',
+    position:'absolute',
+    top:0,
+    left:0,
+    backgroundColor: '#21e6c1',
+    margin: 10,
+    color:'white',
   },
 });
